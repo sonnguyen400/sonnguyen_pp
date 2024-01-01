@@ -1,0 +1,25 @@
+.button {
+    display: flex;
+    align-items: center;
+    .icon {
+        width: fit-content;
+        padding-top: 2px;
+        transition: 0.5s;
+        .btnIcon_impact {
+            display: none;
+            opacity: 0;
+        }
+        .btnIcon,
+        .btnIcon_impact {
+            transition: 0.1ss;
+        }
+    }
+
+    &:hover .btnIcon_impact {
+        display: block;
+        opacity: 1;
+    }
+    &:hover .btnIcon_impact ~ .btnIcon {
+        display: none;
+    }
+}

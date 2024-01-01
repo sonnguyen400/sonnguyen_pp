@@ -1,0 +1,13 @@
+.menu {
+    display: none;
+}
+.hover {
+    &:hover .menu {
+        display: block;
+    }
+}
+.focus {
+    &:focus .menu {
+        display: block;
+    }
+}
