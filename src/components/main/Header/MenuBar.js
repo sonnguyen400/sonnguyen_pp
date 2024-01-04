@@ -3,8 +3,8 @@ import Button from "~/components/base/Button";
 import style from './style.module.scss';
 import DropDown from "~/components/base/DropdownMenu/DropdownMenu";
 
-function MenuBar() {
-    return (<div className={clsx(style.categoryBar)}>
+function MenuBar({ className }) {
+    return (<div className={clsx(style.categoryBar, className)}>
         <div className="w-max">
             <DropDown
                 className={clsx(style.menuItem)}

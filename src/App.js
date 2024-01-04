@@ -1,7 +1,9 @@
 import { publicRouting } from "~/router/Routing.js";
 import { Routes, Route } from 'react-router-dom';
+import './App.module.scss';
 import DefaultLayout from '~/layout/DefaultLayout';
 import { Fragment } from "react";
+import './App.module.scss';
 function App() {
     return (
         <div className="App">

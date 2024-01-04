@@ -4,12 +4,10 @@ import TopHeader from "./TopHeader";
 import MenuBar from "./MenuBar";
 function Header() {
     return (
-        <div className="w-full pt-4" >
-            <div className={clsx("header flex items-center mx-auto", style.header)}>
-                <TopHeader />
-                <MenuBar />
-            </div>
-        </div >);
+        <>
+            <TopHeader className={clsx("max-w-7xl mx-auto pt-3")} />
+            <MenuBar className={clsx("max-w-7xl mx-auto sticky top-0 z-10 bg-white border-b border-black-500 mb-4")} />
+        </>);
 }
 
 export default Header;

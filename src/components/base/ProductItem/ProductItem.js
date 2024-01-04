@@ -9,14 +9,7 @@ function ProductItem({ product, ...props }) {
             <div className="flex flex-col">
                 <div className="relative w-full aspect-square rounded-t-lg  rounded-tr-lg">
                     <img src="https://bizweb.dktcdn.net/100/398/567/products/mbp14-silver2.png" className="absolute w-full h-full top-0 left-0 object-contain" alt="laptop" />
-                    <div className="absolute right-1 bottom-1 w-3 h-3 p-1 hover:h-max box-content">
-                        <DynamicList className='w-full h-full overflow-hidden hover:overflow-scroll' layout="col">
-                            <div className="p-2 w-4 h-4 rounded inline-block bg-red-500"></div>
-                            <div className="p-2 w-4 h-4 rounded inline-block bg-red-500"></div>
-                            <div className="p-2 w-4 h-4 rounded inline-block bg-red-500"></div>
-                            <div className="p-2 w-4 h-4 rounded inline-block bg-red-500"></div>
-                        </DynamicList>
-                    </div>
+
                 </div>
                 <div className="flex flex-col p-2 text-xs text-stone-600">
                     <h2 className="font-bold text-base text-slate-900">MAcbook pro 2022</h2>

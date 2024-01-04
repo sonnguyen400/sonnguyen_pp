@@ -2,8 +2,8 @@ import Button from "~/components/base/Button";
 import style from './style.module.scss';
 import clsx from "clsx";
 import DropDown from "~/components/base/DropdownMenu/DropdownMenu";
-function TopHeader() {
-    return (<div className={clsx(style.topHeader)}>
+function TopHeader({ className }) {
+    return (<div className={clsx(style.topHeader, className)}>
         <h1>LogoHere</h1>
         <div className={clsx(style.searchBar)}>
             <input placeholder="What is your next favorite ?" />
