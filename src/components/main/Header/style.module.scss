@@ -48,7 +48,6 @@
 
 .categoryBar {
     margin-top: 20px;
-    padding: 16px 0px;
     width: 100%;
     overflow-x: auto;
     &::-webkit-scrollbar {
@@ -65,6 +64,20 @@
 
     .menuItem {
         margin-right: 40px;
-        display: inline-table;
+        display: inline-block;
+    }
+}
+.categoryTable {
+    a {
+        @apply flex items-end;
+    }
+    a > i {
+        @apply translate-y-[1px] text-blue-700 text-[12px];
+    }
+    a > span {
+        @apply mr-2;
+    }
+    ul > li {
+        @apply my-2 text-[12px];
     }
 }

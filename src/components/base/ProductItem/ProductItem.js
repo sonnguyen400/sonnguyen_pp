@@ -6,10 +6,9 @@ function ProductItem({ product, ...props }) {
     let [option, setOption] = useState();
     return (
         <div {...props}>
-            <div className="flex flex-col">
-                <div className="relative w-full aspect-square rounded-t-lg  rounded-tr-lg">
-                    <img src="https://bizweb.dktcdn.net/100/398/567/products/mbp14-silver2.png" className="absolute w-full h-full top-0 left-0 object-contain" alt="laptop" />
-
+            <div className="flex w-full flex-col">
+                <div className="px-4 relative w-full aspect-square rounded-t-lg  rounded-tr-lg">
+                    <img src="https://bizweb.dktcdn.net/100/398/567/products/mbp14-silver2.png" className="absolute px-4 w-full h-full top-0 left-0 object-contain" alt="laptop" />
                 </div>
                 <div className="flex flex-col p-2 text-xs text-stone-600">
                     <h2 className="font-bold text-base text-slate-900">MAcbook pro 2022</h2>

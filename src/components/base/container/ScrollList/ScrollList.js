@@ -1,30 +1,47 @@
-import { useEffect, useRef } from 'react';
+import { useAfterEffect, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import style from './style.module.scss';
 import clsx from 'clsx';
-function ScrollList({ children, ...props }) {
+function ScrollList({ children, className, leftBtn, rightBtn, ...props }) {
     const scrollList = useRef();
-    function scrollLeft() {
-        scrollList.current.scrollBy({
-            left: 40,
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
-    function scrollRight() {
-        scrollList.current.scrollBy({
-            left: -40,
-            top: 0,
-            behavior: 'smooth'
-        })
+    useLayoutEffect(() => {
+        const scrollToLeft = scrollList.current.querySelector(".left");
+        const scrollToRight = scrollList.current.querySelector(".right");
+        const list = scrollList.current.querySelector('.scrollList');
+        const elementW = list.querySelector("div").offsetWidth;
+        if (scrollToLeft) {
+            scrollToLeft.addEventListener("click", (e) => {
+                list.scroll({
+                    top: 0,
+                    left: list.scrollLeft + elementW,
+                    behavior: "smooth"
+                })
+            })
+        }
+        if (scrollToRight) {
+            scrollToRight.addEventListener("click", (e) => {
+                list.scroll({
+                    top: 0,
+                    left: list.scrollLeft - elementW,
+                    behavior: "smooth"
+                })
+            });
+        }
+    }, [])
 
-    }
-    return (<div {...props}>
-        <button onClick={scrollLeft} className='right bg-white rounded-full width absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden'><i className="fi fi-br-angle-right"></i></button>
-        <button onClick={scrollRight} className='left bg-white rounded-full width absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden'><i className="fi fi-br-angle-left"></i></button>
-        <div ref={scrollList} class={clsx('w-full overflow-x-auto', style.list)}>
-            <div className={clsx("w-max flex")}>
-                {children}
-            </div>
+    return (<div ref={scrollList} {...props} className={clsx("relative", style.scrollList)}>
+        {leftBtn === true ?
+            <button className='left bg-white aspect-square z-10 rounded-full absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden'>
+                <i className="fi fi-br-angle-right"></i>
+            </button> : leftBtn
+        }
+        {
+            rightBtn === true ?
+                <button className='right bg-white aspect-square z-10 rounded-full absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden'>
+                    <i className="fi fi-br-angle-left"></i>
+                </button> : rightBtn
+        }
+        <div className={clsx(className, 'w-full whitespace-nowrap z-0 scrollbar-thin overflow-x-scroll scrollList')}>
+            {children}
         </div>
     </div>);
 }
