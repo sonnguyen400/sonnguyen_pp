@@ -1,0 +1,19 @@
+.searchBar {
+    --search-bg: rgba(0, 0, 0, 0.053);
+    display: flex;
+    align-items: stretch;
+    border-radius: 3rem;
+    background-color: var(--search-bg);
+    &:focus-within {
+        background-color: rgba(0, 0, 0, 0.123);
+    }
+    input {
+        background-color: transparent;
+        padding: 12px 24px;
+        height: calc(100% + 20px);
+    }
+    input:focus {
+        outline: none;
+        border: none;
+    }
+}

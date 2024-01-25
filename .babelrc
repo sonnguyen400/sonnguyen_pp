@@ -1,1 +1,15 @@
-
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": ["./src"],
+                "alias": {
+                    "~": "./src",
+                    "icon": "./src/resources/icon",
+                    "image": "./src/resources/image"
+                }
+            }
+        ]
+    ]
+}

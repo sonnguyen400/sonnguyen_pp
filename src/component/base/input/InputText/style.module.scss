@@ -1,0 +1,8 @@
+.inputbox {
+    border: 1px solid rgba(100, 100, 100, 0.1);
+    box-sizing: border-box;
+    &:focus-within {
+        border: 1px solid transparent;
+        background-color: rgba(100, 100, 100, 0.1);
+    }
+}

@@ -1,0 +1,10 @@
+.breadcum {
+    @apply text-sm font-semibold p-4 flex items-center;
+    a {
+        @apply px-1 text-blue-600;
+    }
+    a:after {
+        content: ' >';
+        @apply text-black;
+    }
+}

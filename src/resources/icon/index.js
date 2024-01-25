@@ -1,0 +1,9 @@
+export { default as BellS } from './BellS';
+export { default as BellF } from './BellF';
+export { default as BagS } from './BagS';
+export { default as BagF } from './BagF';
+export { default as NewS } from './NewsS';
+export { default as NewF } from './NewsF';
+export { default as HomeF } from './HomeF';
+export { default as AngleDown } from './AngleDown';
+export { default as AngleRight } from './AngleRight'

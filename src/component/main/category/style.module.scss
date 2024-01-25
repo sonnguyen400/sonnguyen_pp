@@ -1,0 +1,19 @@
+.category {
+    @apply h-full;
+    transition: 1s;
+    li {
+        @apply px-4 py-2 rounded-md;
+        i {
+            @apply mr-2 text-sub-dark;
+        }
+        &:hover {
+            background-color: rgba(190, 190, 190, 0.639);
+        }
+        &.active {
+            background-color: aquamarine;
+            i {
+                @apply text-subject;
+            }
+        }
+    }
+}

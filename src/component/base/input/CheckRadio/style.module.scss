@@ -1,0 +1,32 @@
+.inputRadio {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    position: relative;
+    input {
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        cursor: pointer;
+    }
+    input:checked {
+        ~ .checkmark {
+            @apply border-blue-400;
+        }
+        ~ .checkmark i {
+            transform: translate(50%, -50%) scale(1);
+        }
+    }
+    .checkmark {
+        @apply px-4 py-1 relative bg-white rounded-lg border border-gray-400;
+        i {
+            @apply p-1 rounded-full bg-blue-500 absolute right-0 top-0 text-white;
+            transform: translate(50%, -50%) scale(0);
+            font-size: 5px;
+            transition: 0.1s cubic-bezier(1, -0.01, 1, -0.04);
+        }
+    }
+}
