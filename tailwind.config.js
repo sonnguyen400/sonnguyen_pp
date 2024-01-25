@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    content: [
+        './src/**/*.{js,jsx,ts,tsx}',
+        "./node_modules/tw-elements-react/dist/js/**/*.js",
+    ],
     theme: {
         extend: {},
         screens: {
@@ -24,6 +27,9 @@ module.exports = {
             sub: '#8AB6D6',
             vioblue: '#3468C0',
         },
+        zIndex: {
+            header: 10
+        }
     },
-    plugins: [],
+    plugins: []
 };

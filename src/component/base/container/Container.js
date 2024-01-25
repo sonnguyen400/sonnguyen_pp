@@ -1,5 +1,5 @@
 function Container({ children }) {
-    return <div className="lg:max-w-screen-lg">{children}</div>;
+    return <div className="xl:max-w-screen-xl mx-auto">{children}</div>;
 }
 
 export default Container;

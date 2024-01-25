@@ -4,7 +4,7 @@
         "paths": {
             "~/*": ["./src/*"],
             "image/*": ["./src/resources/image/*"],
-            "icon/*": ["./src/resources/icon/*"],
-        },
-    },
+            "icon/*": ["./src/resources/icon/*"]
+        }
+    }
 }

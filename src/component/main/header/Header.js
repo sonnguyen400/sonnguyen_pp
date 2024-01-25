@@ -1,13 +1,13 @@
-import Button from '~/component/base/button/Button';
-import style from './style.module.scss';
+
 import clsx from 'clsx';
 import { useState, useRef } from 'react';
 import Search from '~/component/base/search';
-import { NewF, NewS, BellF, BellS, BagS, BagF } from 'icon';
 import Tippy from '@tippyjs/react/headless';
 import Category from '../category/Category';
 import { AngleDown, AngleRight } from 'icon';
-function Header({ className }) {
+import Container from '~/component/base/container/Container';
+import Menu from '~/component/base/menu/Menu';
+function Header() {
     const [category, setCategory] = useState(false);
     const categoryPanel = useRef();
     function categoryToggle(instance) {
@@ -17,50 +17,14 @@ function Header({ className }) {
         }
     }
     return (
-        <div className=" fixed z-50 w-full top-0 bg-white">
-            <div className={clsx('max-w-screen-xl mx-auto pt-3')}>
-                <div className={clsx(style.topHeader, className)}>
-                    <h1 className="ssm:text-xl">LogoHere</h1>
-                    <Search />
-                    <div className="flex items-center">
-                        <Button
-                            icon={{
-                                content: <NewS />,
-                                react: <NewF />,
-                            }}
-                            className="p-1 flex items-stretch w-max"
-                        >
-                            <span className="max-lg:hidden xl:max-2xl:inline-block">News</span>
-                        </Button>
-                        <Button
-                            icon={{
-                                content: <BellS />,
-                                react: <BellF />,
-                            }}
-                            className="p-1 flex flex-row"
-                        >
-                            <span className="max-lg:hidden xl:max-2xl:inline-block">Notification</span>
-                        </Button>
-                        <Button
-                            icon={{
-                                content: <BagS />,
-                                react: <BagF />,
-                            }}
-                            className="p-1 flex flex-row"
-                            href="./cart"
-                        >
-                            <span className="max-lg:hidden xl:max-2xl:inline-block">Cart</span>
-                        </Button>
-                        <Button
-                            icon={{
-                                content: <BagS />,
-                                react: <BagS />,
-                            }}
-                            className="p-1 flex flex-row"
-                        >
-                            <span className="max-lg:hidden xl:max-2xl:inline-block">Personal</span>
-                        </Button>
+        <div className=" fixed z-header w-full top-0 bg-white">
+            <Container>
+                <div className={clsx("h-20 flex items-center justify-between")}>
+                    <div className='flex items-center'>
+                        <h1 className="max-ssm:text-xl inline-block mr-5 mb-2">LogoHere</h1>
+                        <Search />
                     </div>
+                    <Menu className="w-full flex-1 justify-evenly" />
                     <Tippy
                         placement="bottom-end"
                         trigger="click"
@@ -84,7 +48,7 @@ function Header({ className }) {
                         </div>
                     </Tippy>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

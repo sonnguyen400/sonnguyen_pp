@@ -6,4 +6,15 @@ export { default as NewS } from './NewsS';
 export { default as NewF } from './NewsF';
 export { default as HomeF } from './HomeF';
 export { default as AngleDown } from './AngleDown';
-export { default as AngleRight } from './AngleRight'
+export { default as AngleRight } from './AngleRight';
+export { default as AngleLeft } from './AngleLeft';
+export { default as Recovery } from './Recovery';
+export { default as PhoneF } from './PhoneF';
+export { default as PhoneS } from './PhoneS';
+export { default as ComputerS } from './ComputerS';
+export { default as ComputerF } from './ComputerF';
+export { default as AudioS } from './AudioS';
+export { default as AudioF } from './AudioF';
+export { default as DisplayS } from './DisplayS';
+export { default as DisplayF } from './DisplayF';
+export { default as Software } from './Software';
