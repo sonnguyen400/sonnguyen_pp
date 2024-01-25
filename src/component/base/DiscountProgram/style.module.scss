@@ -1,0 +1,12 @@
+.discount_title:hover {
+    overflow: visible;
+    animation: running_text 5s forwards;
+}
+@keyframes running_text {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
