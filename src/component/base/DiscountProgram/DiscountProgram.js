@@ -22,7 +22,7 @@ function DiscountProgram({ className, object }) {
         }
     }, [])
     return (<div className={clsx("inline-block", className)}>
-        <div className="w-full p-5 bg-white rounded-lg">
+        <div className="w-full p-5 bg-white rounded-lg border">
             <div className="flex items-center">
                 <div className={clsx("inline-block w-4/5 overflow-hidden")}>
                     <h4 className={clsx("font-semibold text-nowrap text-ellipsis overflow-hidden", style.discount_title)}> Chuong trinh khuyen mai Chuong trinh khuyen maiChuong trinh khuyen mai 1</h4>

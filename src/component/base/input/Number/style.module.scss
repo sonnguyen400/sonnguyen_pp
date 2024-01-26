@@ -1,0 +1,13 @@
+.inputNumber {
+    @apply h-full w-full;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+    &::-webkit-inner-spin-button {
+        display: none;
+    }
+}
+.disabled {
+    @apply text-gray-500;
+}

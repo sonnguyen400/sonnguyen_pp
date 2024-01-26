@@ -8,7 +8,7 @@ import Carousel from "~/component/base/carousel";
 
 function Home({ children }) {
     return (
-        <div className="px-2">
+        <div>
             <Carousel
                 className='w-full h-64 '
             >
@@ -72,17 +72,14 @@ function Home({ children }) {
                     </div>
                 </Tippy>
             </div>
-            <div id="DiscountedProgram" className="mt-10 p-5 bg-red-400 rounded-2xl">
-                <h2 className="font-medium pl-5 text-white">Discount</h2>
-                <div className="p-5">
-                    <h3 className="font-medium pl-5 text-white">Discount Programs</h3>
-                    <ScrollList className={clsx("w-full")} leftBtn rightBtn>
-                        <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
-                        <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
-                        <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
-                        <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
-                    </ScrollList>
-                </div>
+            <div className="py-5">
+                <h3 className="font-medium pl-5 text-white">Discount Programs</h3>
+                <ScrollList className={clsx("w-full")} leftBtn rightBtn>
+                    <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
+                    <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
+                    <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
+                    <DiscountProgram className={clsx("lg:w-1/2 md:w-full ssm:w-full p-2")} />
+                </ScrollList>
             </div>
             <div id="DiscountedProduct" className="mt-10 rounded-2xl">
                 <h3 className="text-2xl font-medium ml-10 mb-5 text-white">Discount Programs</h3>

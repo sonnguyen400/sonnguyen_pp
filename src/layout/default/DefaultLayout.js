@@ -1,4 +1,5 @@
 import Container from '~/component/base/container/Container';
+import Footer from '~/component/main/footer';
 import Header from '~/component/main/header/Header';
 import QuickCategory from '~/component/main/quickCategory';
 
@@ -12,6 +13,7 @@ function DefaultLayout({ children }) {
                     {children}
                 </div>
             </Container>
+            <Footer />
         </>
     );
 }

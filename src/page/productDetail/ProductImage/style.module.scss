@@ -1,0 +1,9 @@
+.image {
+    @apply relative;
+    .changeImage {
+        @apply h-full absolute hidden;
+    }
+}
+.image:hover .changeImage {
+    display: block;
+}

@@ -1,0 +1,23 @@
+.productConfiguration {
+    @apply w-full text-sm;
+    tr {
+        td {
+            @apply px-5 py-2;
+            &:first-child {
+                @apply font-semibold;
+            }
+        }
+        &:last-child {
+            @apply bg-transparent;
+            td {
+                @apply px-12 pt-2;
+            }
+        }
+        &:nth-child(odd):not(:last-child) {
+            background-color: rgba(0, 47, 255, 0.156);
+        }
+        &:nth-child(even):not(:last-child) {
+            background-color: rgba(0, 47, 255, 0.077);
+        }
+    }
+}

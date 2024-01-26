@@ -1,9 +1,10 @@
 import { memo } from 'react';
-import Button from 'src/components/base/Button';
+import Button from '~/component/base/button';
+import Container from '~/component/base/container/Container';
 function Footer() {
     return (
-        <div className="w-full bg-blue-100 mt-5">
-            <div className="lg:max-w-screen-xl mx-auto pt-4">
+        <div className='w-full bg-[var(--subject-color)] mt-10'>
+            <Container>
                 <div className="ssm:px-2">
                     <div>
                         <h1 className="text-blue-950 bg-">Logo</h1>
@@ -153,7 +154,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="pb-4 border">
+                    <div className="pb-4">
                         <h4 className="font-semibold mt-5">My Logo</h4>
                         <div className="mt-4 flex items-start">
                             <div className="inline-block w-1/3 p-4">
@@ -211,7 +212,7 @@ function Footer() {
                         </a>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

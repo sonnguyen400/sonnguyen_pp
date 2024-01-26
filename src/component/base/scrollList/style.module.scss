@@ -1,2 +1,3 @@
-.scrollList {
+.scrollBtn {
+    @apply bg-white aspect-square z-[var(--z-scrollList-btn)] rounded-full absolute top-1/2 -translate-y-1/2  p-6 shadow-xl max-sm:hidden;
 }

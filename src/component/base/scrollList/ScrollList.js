@@ -1,6 +1,7 @@
-import { useAfterEffect, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
-import style from './style.module.scss';
+import { useLayoutEffect, useRef } from 'react';
 import clsx from 'clsx';
+import style from './style.module.scss';
+import { AngleLeft, AngleRight } from '~/resources/icon';
 function ScrollList({ children, className, leftBtn, rightBtn, ...props }) {
     const scrollList = useRef();
     useLayoutEffect(() => {
@@ -29,17 +30,17 @@ function ScrollList({ children, className, leftBtn, rightBtn, ...props }) {
     }, []);
 
     return (
-        <div ref={scrollList} {...props} className={clsx('relative')}>
+        <div ref={scrollList} {...props} className={clsx('relative z-[var(--z-scrollList)]')}>
             {leftBtn === true ? (
-                <button className="left bg-white aspect-square z-10 rounded-full absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden">
-                    <i className="fi fi-br-angle-right"></i>
+                <button className={clsx("left-0 -translate-x-1/2", style.scrollBtn)}>
+                    <AngleLeft />
                 </button>
             ) : (
                 leftBtn
             )}
             {rightBtn === true ? (
-                <button className="right bg-white aspect-square z-10 rounded-full absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 p-6 shadow-xl max-sm:hidden">
-                    <i className="fi fi-br-angle-left"></i>
+                <button className={clsx("right-0 translate-x-1/2", style.scrollBtn)}>
+                    <AngleRight />
                 </button>
             ) : (
                 rightBtn

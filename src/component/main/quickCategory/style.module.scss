@@ -1,7 +1,5 @@
 .categoryBar {
-    margin-top: 20px;
-    width: 100%;
-    overflow-x: auto;
+    @apply py-5 overflow-x-auto w-full;
     &::-webkit-scrollbar {
         background-color: transparent;
         height: 2px;

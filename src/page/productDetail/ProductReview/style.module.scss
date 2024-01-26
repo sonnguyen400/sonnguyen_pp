@@ -1,0 +1,6 @@
+.productReview {
+    @apply relative;
+    .productReviewButton {
+        @apply w-full absolute bottom-0 flex align-bottom;
+    }
+}

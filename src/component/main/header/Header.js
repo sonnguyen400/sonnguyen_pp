@@ -17,9 +17,9 @@ function Header() {
         }
     }
     return (
-        <div className=" fixed z-header w-full top-0 bg-white">
+        <div className=" fixed z-header w-full top-0 bg-white z-[var(--z-header)]">
             <Container>
-                <div className={clsx("h-20 flex items-center justify-between")}>
+                <div className={clsx("h-20 flex items-center justify-between border-b")}>
                     <div className='flex items-center'>
                         <h1 className="max-ssm:text-xl inline-block mr-5 mb-2">LogoHere</h1>
                         <Search />
