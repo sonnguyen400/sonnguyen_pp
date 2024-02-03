@@ -3,7 +3,7 @@
     transform: translateX(13px);
 }
 .categoryItem {
-    @apply text-sm md:p-2 md:w-1/6 sm:w-1/5 ssm:w-1/4 ssm:p-1;
+    @apply text-sm p-2 md:w-[12.5%] sm:w-1/6 ssm:w-1/5;
     .content {
         @apply mx-1 flex flex-col items-center lg:mx-6 md:mx-4 ssm:mx-3;
         img {

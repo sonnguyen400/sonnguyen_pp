@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless';
 import clsx from 'clsx';
 import style from './style.module.scss';
+import { AngleDown } from '~/resources/icon';
 function FilterItem({ children, title, name, ...props }) {
     const [searchParam, setSearchParam] = useSearchParams(new URLSearchParams(window.location.search));
     const childrens = useMemo(() => {
@@ -76,7 +77,7 @@ function FilterItem({ children, title, name, ...props }) {
             <button {...props}>
                 <span className="mr-2">{title || name}</span>
                 <div className="inline-block pt-1 translate-y-1">
-                    <i className="fi fi-rr-angle-small-down translate-y-2"></i>
+                    <AngleDown fill="#c0c1c3" />
                 </div>
             </button>
         </Tippy>

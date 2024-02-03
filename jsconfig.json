@@ -5,7 +5,7 @@
             "~/*": ["./src/*"],
             "image/*": ["./src/resources/image/*"],
             "icon/*": ["./src/resources/icon/*"],
-            "component/*": ["./src/component/*"],
-        },
-    },
+            "component/*": ["./src/component/*"]
+        }
+    }
 }

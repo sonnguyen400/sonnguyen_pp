@@ -1,16 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./resources/font/font.css');
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: 'Roboto', sans-serif;
 }
 @layer base {
     :root {
@@ -20,6 +21,7 @@ code {
         --z-header: 10;
         --z-scrollList: 1;
         --z-scrollList-btn: 2;
+        --z-body: 3;
         --sm-margin: 4px;
         --default-margin: 8px;
     }

@@ -1,66 +1,52 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 import style from './style.module.scss';
-import { useRef, useEffect, memo, useMemo, useState } from "react";
-function InputNumber({ className, increateBtn, decreateBtn, vertical, step, value, defaultValue, min, max, disabledClass, onChange, ...props }) {
-    const inputLayout = useRef();
-    const initializeValue = useMemo(() => {
-        if (value) {
-            if (min && value < min) return min;
-            if (max && value > max) return max;
-        }
-        if (defaultValue) {
-            if (min && defaultValue < min) return min;
-            if (max && defaultValue > max) return max;
-        }
-        return min || max || value || defaultValue || 0;
-    }, []);
-
-    const [intValue, setValue] = useState(initializeValue);
-    useEffect(() => {
-        if (onChange) onChange(intValue);
-    }, [intValue])
-    function changeValue(e) {
-        setValue(e.target.value);
+import { useRef, memo, useState } from 'react';
+function InputNumber({ className, increateBtn, decreateBtn, min, max, vertical, value, ...props }) {
+    const input = useRef();
+    const [inputValue, setValue] = useState(value || 0);
+    function increase() {
+        input.current.stepUp();
+        setValue(input.current.value);
     }
-    function increate(e) {
-        if (!max || intValue < max) {
-            setValue(value => value * 1 + (step || 1));
-        }
+    function decrease() {
+        input.current.stepDown();
+        setValue(input.current.value);
     }
-    function decreate(e) {
-        if (!min || intValue > min) {
-            setValue(value => value * 1 - (step || 1));
-        }
-    }
-    function checkMinMax(e) {
-        if (min && e.target.value < min) setValue(min);
-        if (max && e.target.value > max) setValue(max);
-    }
-    useEffect(() => {
-        let input = inputLayout.current.querySelector("input");
-        input.addEventListener("blur", checkMinMax);
-        return () => {
-            input.removeEventListener("blur", checkMinMax);
-        }
-    }, [])
-
-    return (<div ref={inputLayout} className={clsx(className,
-        "flex",
-        {
-            "flex-col": vertical,
-            "flex-row": !vertical
-        }
-    )}>
-        <div onClick={decreate} className={clsx("w-fit h-fit decreate cursor-pointer select-none",
-            {
-                [style.disabled + "  " + disabledClass]: min && intValue === min
-            }
-        )}>{decreateBtn === true ? <div className=" w-fit h-fit ">-</div> : decreateBtn}</div>
-        <input className={clsx(style.inputNumber, "text-center")} onChange={changeValue} type="number" value={intValue}  {...props} />
-        <div onClick={increate} className={clsx("w-fit h-fit increate cursor-pointer select-none",
-            { [style.disabled + " " + disabledClass]: max && intValue === max }
-        )}>{increateBtn === true ? <div className=" w-full h-full">+</div> : increateBtn}</div>
-    </div >);
+    return (
+        <div
+            className={clsx(className, 'flex', {
+                'flex-col': vertical,
+                'flex-row': !vertical,
+            })}
+        >
+            <div
+                onClick={decrease}
+                className={clsx('w-fit h-fit decreate cursor-pointer select-none', {
+                    [style.disabled]: min && inputValue <= min,
+                })}
+            >
+                {decreateBtn === true ? <div className=" w-fit h-fit ">-</div> : decreateBtn}
+            </div>
+            <input
+                className={clsx(style.inputNumber, 'text-center')}
+                type="number"
+                {...props}
+                min={min}
+                max={max}
+                ref={input}
+                value={inputValue}
+                onChange={(e) => setValue(e.target.value)}
+            ></input>
+            <div
+                onClick={increase}
+                className={clsx('w-fit h-fit increate cursor-pointer select-none', {
+                    [style.disabled]: max && inputValue >= max,
+                })}
+            >
+                {increateBtn === true ? <div className=" w-full h-full">+</div> : increateBtn}
+            </div>
+        </div>
+    );
 }
 
 export default memo(InputNumber);

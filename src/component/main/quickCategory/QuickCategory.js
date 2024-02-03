@@ -4,7 +4,7 @@ import style from './style.module.scss';
 import ScrollList from "~/component/base/scrollList/ScrollList";
 import Tippy from "@tippyjs/react/headless";
 import Container from "~/component/base/container/Container";
-import { AngleLeft, AngleRight, PhoneS, PhoneF, ComputerF, ComputerS, Recovery, AudioF, AudioS, DisplayF, DisplayS, Software } from "~/resources/icon";
+import { AngleLeft, AngleRight, PhoneS, PhoneF, ComputerF, ComputerS, Recovery, AudioF, AudioS, DisplayF, DisplayS, Software, SoftwareF } from "~/resources/icon";
 
 function QuickCategory({ className, ...props }) {
     return (
@@ -69,7 +69,8 @@ function QuickCategory({ className, ...props }) {
                             <Button
                                 className='mr-5 px-4 py-2 rounded-3xl hover:bg-slate-800/70 hover:text-slate-200'
                                 icon={{
-                                    "content": <Software />
+                                    "content": <Software />,
+                                    "react": <SoftwareF />
                                 }}
                             >Software</Button>
                         </div>

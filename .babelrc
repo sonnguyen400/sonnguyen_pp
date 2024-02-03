@@ -8,7 +8,7 @@
                     "~": "./src",
                     "icon": "./src/resources/icon",
                     "image": "./src/resources/image",
-                    "component":"./src/component"
+                    "component": "./src/component"
                 }
             }
         ]
