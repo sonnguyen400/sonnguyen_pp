@@ -8,23 +8,13 @@ function AdminLayout({ children }) {
     return (
         <>
             <Header sidebar={sidebar} setSidebar={setSidebar} />
-            <div
-                className={clsx('fixed top-16 left-0', {
-                    'w-16': !sidebar,
-                    'w-40': sidebar,
-                })}
-            >
-                <Sidebar state={sidebar} />
-            </div>
-            <div className={clsx('p-4 w-full flex justify-end')}>
-                <Box
-                    className={clsx('p-2 ', {
-                        'w-[calc(100%-64px)]': !sidebar,
-                        'w-[calc(100%-160px)]': sidebar,
-                    })}
-                >
-                    {children}
-                </Box>
+            <div className="fixed top-16  w-full flex p-2">
+                <div className="flex-2 ">
+                    <Sidebar className="px-2" state={sidebar} />
+                </div>
+                <div className="p-2 w-full h-[calc(100vh-64px)]">
+                    <Box className={clsx('p-2 overflow-y-scroll')}>{children}</Box>
+                </div>
             </div>
         </>
     );

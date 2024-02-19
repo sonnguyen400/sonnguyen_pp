@@ -10,6 +10,8 @@ import DashBoard from '~/page/admin/dashboard';
 import AdminLayout from '~/layout/admin';
 import ProductManage from '~/page/admin/productManage';
 import AddProduct from '~/page/admin/addProduct/AddProduct';
+import CategoryManage from '~/page/admin/categoryManage/CategogyManage';
+import AddCategory from '~/page/admin/addCategory/AddCategory';
 
 const publicRouting = [
     { path: '/', component: Home },
@@ -26,5 +28,7 @@ const adminRouter = [
     { path: '/admin', component: DashBoard, layout: AdminLayout },
     { path: '/admin/product-manage', component: ProductManage, layout: AdminLayout },
     { path: '/admin/product-manage/add', component: AddProduct, layout: AdminLayout },
+    { path: '/admin/category', component: CategoryManage, layout: AdminLayout },
+    { path: '/admin/category/add', component: AddCategory, layout: AdminLayout },
 ];
 export { publicRouting, adminRouter };

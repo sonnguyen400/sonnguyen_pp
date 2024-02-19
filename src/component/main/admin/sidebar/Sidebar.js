@@ -6,9 +6,8 @@ import Percentage from '~/resources/icon/icons/Percentage';
 import { IdCard } from '~/resources/icon';
 import Box from '~/component/base/box/Box';
 function Sidebar({ className, state, ...props }) {
-    console.log(state);
     return (
-        <Box className={clsx(className, 'px-2 shadow-sm rounded-2xl')}>
+        <Box className={clsx(className, 'shadow-sm rounded-2xl')}>
             <div className="w-full">
                 <Link
                     className={clsx(style.sidebarItem, {
@@ -44,6 +43,7 @@ function Sidebar({ className, state, ...props }) {
                         [style.spread]: !state,
                         [style.reduce]: state,
                     })}
+                    to={'/admin/category'}
                 >
                     <Category fill="#374151" />
                     <span className={style.content}>Category</span>

@@ -1,13 +1,9 @@
 import clsx from 'clsx';
-
-function InputField({ children, label, className, ...props }) {
+import { memo } from 'react';
+function InputField({ children, className, ...props }) {
     return (
         <div {...props} className={clsx(className, 'inputField focus-within:bg-transparent')} tabIndex={-1}>
-            {label && <div className="mb-2 pl-4 font-semibold text-gray-500">{label}</div>}
             {children}
-            <div className="flex justify-center ">
-                <span className="text-red-500 text-[12px] errText hidden"></span>
-            </div>
         </div>
     );
 }

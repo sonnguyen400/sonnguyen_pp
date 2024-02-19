@@ -1,0 +1,23 @@
+.categoryImageUploadButton {
+    input[type='file'] {
+        @apply p-24 rounded-xl border-gray-400 border-dashed border-4 bg-clip-padding;
+        &::-webkit-file-upload-button {
+            display: none;
+        }
+        &:hover {
+            background-color: rgb(201, 201, 201);
+        }
+    }
+}
+.inputField {
+    .input {
+        @apply focus:outline-none border-b border-gray-400 py-2 text-gray-700;
+    }
+    .error {
+        @apply font-semibold text-red-500 text-sm pt-2;
+    }
+}
+
+.inputLabel {
+    @apply text-gray-400 font-bold;
+}
